@@ -61,7 +61,7 @@ This stage is optional and may be skipped if you don't need the secure network c
 
 It's tested to work on Debian 9 GNU/Linux with Lua versions:
 
-* Lua 5.1 ... Lua 5.4 (**i.e. any modern Lua version**)
+* Lua 5.1 and above (**i.e. any modern Lua version**)
 * LuaJIT 2.0.0 ... LuaJIT 2.1.0 beta3
 * It may also work on other Lua versions without any guarantees
 
@@ -205,6 +205,7 @@ Standard MIT License, see LICENSE file for full text
 * in file `./openwrt/make-package-without-openwrt-sources.sh`: change `Version: X.Y.Z-P` in $PKG_ROOT/control
 * in file `./openwrt/Makefile`: change `PKG_VERSION:=X.Y.Z` and maybe `PKG_RELEASE:=1`
 * copy file `./luamqtt-scm-1.rockspec` to `./rockspecs/luamqtt-X.Y.Z-1.rockspec` change `local package_version = "scm"`, `local package_version = "X.Y.Z"`
+* run `luarocks lint ./rockspecs/luamqtt-X.Y.Z-1.rockspec` and check output for errors
 * run `./tests/run-luacheck.sh` and check output for errors
 * run `./tests/run-markdownlint.sh` and check output for errors
 * run `./tests/run-for-all-lua-versions.sh` and check output for errors
